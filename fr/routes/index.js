@@ -21,10 +21,12 @@ module.exports = [
   },
   {
     //
-    method: 'GET',
-    path: '/test',
+    method: 'POST',
+    path: '/api/saveLogin',
     config: {
       handler: function(request, reply) {
+        console.log(request.payload.accessToken);
+        console.log(request.payload.userId);
         reply();
       }
     }
