@@ -90,19 +90,21 @@ module.exports = [
         var options = {
           url: 'http://localhost:5000/slugs/' + slugId,
           method: 'PATCH',
-          body: {
-            _id: slugId,
-            number_of_people: numPeople,
-          }
+          json: true,
+          body: { number_of_people: numPeople }
         };
         return req.patchAsync(options)
         .tap(console.log)
-        .then(function(slug) { return processRows(slug); })
+        .then(processSingle)
         .then(reply);
       }
     }
   }
 ];
+
+function processSingle(rows) {
+  return rows[1];
+}
 
 function processRows(rows) {
   var target = rows[1];
