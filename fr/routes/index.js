@@ -20,6 +20,7 @@ module.exports = [
     handler: { file: 'index.html' }
   },
   {
+    // 
     method: 'GET',
     path: '/test',
     config: {
