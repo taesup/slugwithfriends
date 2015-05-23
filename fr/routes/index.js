@@ -48,9 +48,12 @@ module.exports = [
     path: '/api/locations',
     config: {
       handler: function(request, reply) {
-        req.getAsync('http://localhost:5000/locations')
-        .then(function(users) { return processRows(users); })
-        .then(reply);
+        // req.getAsync('http://localhost:5000/locations')
+        // .then(function(users) { return processRows(users); })
+        // .then(reply);
+
+        var locs = fakeLocations();
+        reply(locs);
       }
     }
   }
@@ -63,4 +66,16 @@ function processRows(rows) {
     return JSON.parse(row)._items;
   });
   return rows;
+}
+
+function fakeLocations() {
+  var output = [];
+  for (var i = 0; i < 25; i++) {
+    var temp = {
+      from: "Here",
+      to: "There"
+    };
+    output.push(temp);
+  }
+  return output;
 }
