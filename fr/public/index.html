@@ -12,13 +12,53 @@
 <body ng-app="SlugApp" ng-controller="slugController">
   <div ng-view></div>
   <div id="fb-root"></div>
-  <script>(function(d, s, id) {
+    <script>
+
+  (function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) return;
     js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3&appId=769836616448783";
+    js.src = "//connect.facebook.net/en_US/sdk.js";
     fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));</script>
+  }(document, 'script', 'facebook-jssdk'));
+
+
+  function statusChangeCallback(response) {
+    console.log('statusChangeCallback');
+    console.log(response);
+    if (response.status === 'connected') {
+      console.log('connected');
+      console.log(response.authResponse.accessToken);
+    }
+     else if (response.status === 'not_authorized') {
+      console.log("not_authorized")
+    }
+  }  
+
+  function checkLoginState() {
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+    });
+  }
+
+  window.fbAsyncInit = function() {
+  FB.init({
+    appId      : '905205639542365',
+    cookie     : true,  // enable cookies to allow the server to access 
+    version    : 'v2.3' // use version 2.2
+  });
+
+  FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+  });
+  }
+
+
+
+
+
+
+    </script>
   </div>
 
   <div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false"></div>
