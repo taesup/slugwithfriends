@@ -1,12 +1,11 @@
 app.controller('slugController',
-  ['$scope', 'Session', function($scope, Session) {
+  ['$scope', '$location', 'Session', function($scope, $location, Session) {
 
-  $scope.saveLogin = function(userId, accessToken) {
-    console.log(userId);
-    console.log(accessToken);
-
-    Session.setUserId(userId);
-    Session.setAccessToken(accessToken);
+  $scope.saveLogin = function(response) {
+    Session.setUserId(response.userID);
+    Session.setAccessToken(response.accessToken);
+    $location.path('/home');
+    $scope.$apply();
   };
 
 }]);
