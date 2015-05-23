@@ -72,6 +72,7 @@ function fakeLocations() {
   var output = [];
   for (var i = 0; i < 25; i++) {
     var temp = {
+      _id: 'asldfkjadlskfjasdf',
       from: "Here",
       to: "There"
     };
