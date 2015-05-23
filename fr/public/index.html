@@ -10,58 +10,9 @@
 </head>
 
 <body ng-app="SlugApp" ng-controller="slugController">
-  <div ng-view></div>
   <div id="fb-root"></div>
-    <script>
-
-  (function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/sdk.js";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-
-
-  function statusChangeCallback(response) {
-    console.log('statusChangeCallback');
-    console.log(response);
-    if (response.status === 'connected') {
-      console.log('connected');
-      console.log(response.authResponse.accessToken);
-    }
-     else if (response.status === 'not_authorized') {
-      console.log("not_authorized")
-    }
-  }  
-
-  function checkLoginState() {
-    FB.getLoginStatus(function(response) {
-      statusChangeCallback(response);
-    });
-  }
-
-  window.fbAsyncInit = function() {
-  FB.init({
-    appId      : '905205639542365',
-    cookie     : true,  // enable cookies to allow the server to access 
-    version    : 'v2.3' // use version 2.2
-  });
-
-  FB.getLoginStatus(function(response) {
-    statusChangeCallback(response);
-  });
-  }
-
-
-
-
-
-
-    </script>
-  </div>
-
-  <div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false"></div>
+  <div class="fb-login-button" data-max-rows="1" data-size="large" data-show-faces="false" data-auto-logout-link="true"></div>
+  <div ng-view></div>
 
   <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
   <script type="text/javascript" src="/static/bower_components/foundation/js/foundation.min.js"></script>
@@ -74,7 +25,6 @@
   <script type="text/javascript">
     $(document).foundation();
   </script>
-
 </body>
 
 

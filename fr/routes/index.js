@@ -20,14 +20,13 @@ module.exports = [
     handler: { file: 'index.html' }
   },
   {
-    // 
+    //
     method: 'GET',
     path: '/test',
     config: {
       handler: function(request, reply) {
-        fb.login('test', 'pass');
         reply();
-      }  
+      }
     }
   }
 ];

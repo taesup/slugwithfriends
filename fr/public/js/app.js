@@ -1,4 +1,3 @@
-console.log('route');
 angular.module('SlugApp', [
   'SlugApp.services',
   'SlugApp.controllers',
