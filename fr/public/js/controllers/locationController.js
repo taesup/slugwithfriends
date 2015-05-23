@@ -25,7 +25,19 @@ app.controller('locationController',
     });
   };
 
-  $scope.joinSlug = function() {};
+  $scope.joinSlug = function(slugId, numPeople) {
+    numPeople = numPeople - 1;
+    if (numPeople < 1) { alert('There are no more slots!'); return; }
+    var url = '/api/join';
+    var postData = {
+      slugId: slugId,
+      numPeople: numPeople
+    };
+    return $http.post(url, postData)
+    .success(function(data) {
+      $location.path('/joined');
+    });
+  };
 
   $scope.getLocation();
   $scope.getSlugs();
