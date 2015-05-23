@@ -62,6 +62,11 @@ p, a, input, button {
   line-height: 150%;
 } 
 
+#main {
+  margin: 0 auto;
+  padding: 0 100px;
+}
+
 .title {
   font-size: 64px;
   margin-bottom: 20px;
@@ -74,9 +79,7 @@ p, a, input, button {
 .arrow {
   color: #FFF;
   font-size: 100px;
-  position: absolute;
-  top: 475px;
-  left: 53%;
+  margin-left: 200px;
   -webkit-animation: fadein 7s; /* Safari, Chrome and Opera > 12.1 */
      -moz-animation: fadein 7s; /* Firefox < 16 */
       -ms-animation: fadein 7s; /* Internet Explorer */
