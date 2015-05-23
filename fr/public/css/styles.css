@@ -220,6 +220,16 @@ input.depart_date, input.depart_time {
   margin-top: 20px;
 }
 
+.join {
+  margin-top: 400px;
+}
+
+.join h1, .join h2 {
+  font-size: 48px;
+  margin-top: 20px;
+  /*margin-top: 500px;*/
+}
+
 /*MOBILE*/
 @media only screen and (max-width: 40em) { 
 
