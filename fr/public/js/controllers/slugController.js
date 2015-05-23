@@ -22,6 +22,6 @@ app.controller('slugController',
       console.log(data);
       $scope.locationData = data;
     });
-  }
+  };
 
 }]);
