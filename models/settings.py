@@ -21,7 +21,7 @@ X_DOMAINS = "*"
 users = {
     'item_title': 'users',
     'schema': {
-        'email': {'type': 'string',
+        'user_id': {'type': 'string',
                   'required': True
                   },
         'user_token': {'type': 'string',

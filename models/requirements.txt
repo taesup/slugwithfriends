@@ -1,3 +1,4 @@
 Eve
 requests
 tablib
+lxml
