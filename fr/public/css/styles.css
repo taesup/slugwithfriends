@@ -30,7 +30,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
   line-height: 1;
-  background-color: #4E9CB5;
+  background-color: #B8D0DE;
   margin: 0 auto;
   text-align: center;
 }
@@ -51,32 +51,53 @@ table {
 }
 
 h1, h2, h3, h4, h5, h6, li {
-  font-family: 'Montserrat', sans-serif;
-  color: #FFF;
-  text-shadow: 1px 1px #000;
+  /*font-family: 'Montserrat', sans-serif;*/
+  font-family: 'Open Sans Condensed', sans-serif;
+  /*color: #FFF;*/
+  color: #063940;
+  /*text-shadow: 1px 1px #000;*/
   font-size: 32px;
 }
-p, a, input, button {
+p, a {
   font-family: 'Varela Round', sans-serif;
+  /*font-family: 'Open Sans Condensed', sans-serif;*/
   font-size: 24px;
   line-height: 150%;
+  color: #063940;
 } 
 
-img {
-  height: 300px;
-  width: 200px;
-/*  float: left;
-  margin: 20px;*/
+.images {
+  display: block;
+  /*margin-left: 600px;*/
+  width: 300px;
+  text-align: center;
+  margin: auto;
 }
+
+.images img {
+  /*background-color: red;*/
+  height: 250px;
+  width: 200px;
+  float: left;
+  margin: 0 50px;
+}
+
 
 #main {
   margin: 0 auto;
-  /*padding: 0 100px;*/
 }
 
 .title {
   font-size: 64px;
   margin-bottom: 20px;
+  font-family: 'Montserrat', sans-serif;
+  color: #063940;
+}
+
+.desc {
+  font-size: 48px;
+  font-family: 'Montserrat', sans-serif;
+  color: #063940;
 }
 
 .login {
@@ -98,7 +119,7 @@ img {
 nav ul {
   margin: 0;
   padding: 0;
-  background-color: #0B486B;
+  background-color: #6792AB;
   height: 60px;
 }
 
@@ -111,7 +132,7 @@ nav ul li{
 nav ul li a {
   text-decoration: none;
   color: #FFF;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Open Sans Condensed', sans-serif;
 }
 
 nav ul li a:hover {
