@@ -22,12 +22,14 @@ def get_placenames():
     return list(placenames)
 
 def make_to_and_from():
-    return list(
+    cartesian_product =  list(
         itertools.product(
             get_placenames(),
             get_placenames()
         )
     )
+
+    return [(item1, item2) for item1, item2 in cartesian_product if item1 != item2]
 
 def create_user_record(data):
     return {
