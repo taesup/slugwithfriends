@@ -2,8 +2,8 @@
   <nav>
     <ul>
       <li><a href="/home">Home</a></li>
-      <li><a href="/offer">Offer Ride</a></li>
-      <li><a href="/search">Search for Ride</a></li>
+      <li><a href="/offer">Offer A Ride</a></li>
+      <li><a href="/search">Search for A Ride</a></li>
     </ul>
   </nav>
 
@@ -11,9 +11,9 @@
 
   <div class="list">
     <ul>
-      <li ng-repeat="slug in slugData">
+      <li class="list-item" ng-repeat="slug in slugData">
         <a ng-href="#" ng-click="">
-          {{slug.number_of_people}} seats available
+          {{slug.number_of_people}} Seats Available
         </a>
       </li>
     </ul>

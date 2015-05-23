@@ -50,16 +50,16 @@ table {
   border-spacing: 0;
 }
 
-h1, h2, h3, h4, h5, h6, li {
+h1, h2, h3, h4, h5, h6 {
   font-family: 'Open Sans Condensed', sans-serif;
   color: #063940;
   font-size: 32px;
 }
 
-p, a {
-  font-family: 'Varela Round', sans-serif;
-  /*font-family: 'Open Sans Condensed', sans-serif;*/
-  font-size: 24px;
+p, a, li {
+  /*font-family: 'Varela Round', sans-serif;*/
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 26px;
   line-height: 150%;
   color: #063940;
 } 
@@ -129,7 +129,7 @@ nav ul {
 nav ul li{
   display: inline;
   margin: 0 20px;
-  line-height: 150%;
+  line-height: 220%;
 }
 
 nav ul li a {
@@ -149,22 +149,26 @@ input {
   width: 20%;
 }
 
+h1.ng-binding {
+  margin-top: 50px;
+}
+
 .list {
   display: block;
-  margin: 0 auto;
-  max-width: 730px;
-/*  margin-left: 400px;
-  margin-right: 400px;*/
+  max-width: 600px;
+  margin: 50px auto;
 }
 
 .list-item {
   padding-top: 20px;
   padding-bottom: 20px;
-/*  border-bottom: 1px solid #000;
-  border-left: 1px solid #000;
-  border-right: 1px solid #000;*/
-
+  margin: 10px;
   border: 1px solid #000;
+}
+
+.list-item a {
+  text-decoration: none;
+  font-family: 'Open Sans Condensed', sans-serif;
 }
 
 .fb-login-button {
@@ -210,6 +214,10 @@ input.depart_date, input.depart_time {
 .depart-minutes label {
   font-size: 32px;
   font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.five-minutes, .ten-minutes, .fifteen-minutes {
+  margin-top: 20px;
 }
 
 /*MOBILE*/
