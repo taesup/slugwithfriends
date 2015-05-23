@@ -19,7 +19,6 @@ app.controller('slugController',
   $scope.getLocations = function(response) {
     $http.get('/api/locations')
     .success(function(data) {
-      console.log(data);
       $scope.locationData = data;
     });
   };
