@@ -1,0 +1,23 @@
+{
+  "name": "slugwithfriends",
+  "version": "0.0.0",
+  "description": "Slugging with your buddies",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com//taesup/slugwithfriends"
+  },
+  "keywords": [
+    "slug"
+  ],
+  "author": "taesup",
+  "license": "ISC",
+  "dependencies": {
+    "good": "^6.1.3",
+    "good-console": "^5.0.0",
+    "hapi": "^8.5.1"
+  }
+}
