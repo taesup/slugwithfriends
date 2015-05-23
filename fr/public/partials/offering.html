@@ -19,11 +19,38 @@
 
       </div>
       <div class="depart-time">
-        <h1>Departing At</h1>
+        <h1>Departing On</h1>
+          <input type="date" class="depart_date">
+        <h1>at</h1>
         <!-- <h1>8:00 AM</h1> -->
-        <input type="radio" name="depart_time" class="radio_hidden" value="5" id="time_5" ><label for="time_5">5 minutes</label><br>
-        <input type="radio" name="depart_time" class="radio_hidden" value="15" id="time_15" checked><label for="time_15">15 minutes</label><br>
-        <input type="radio" name="depart_time" class="radio_hidden" value="30" id="time_30"><label for="time_30">30 minutes</label>
+          <input type="time" class="depart_time">
+
+        <script>
+          Date.prototype.toDateInputValue = (function() {
+            var local = new Date(this);
+            local.setMinutes(this.getMinutes() - this.getTimezoneOffset());
+            return local.toJSON().slice(0,10);
+          });
+
+          // $(document).ready( function() {
+              $('.depart_date').val(new Date().toDateInputValue());
+              $('.depart_time').val( (new Date()).toTimeString().split(' ')[0] );
+          // });​
+
+          function setTime(val) {
+            // console.log(val);
+            var dateSum = new Date();
+            dateSum = dateSum.setTime(dateSum.getTime() + 1000 * 60 * val);
+            var dateTxt = (new Date(dateSum)).toTimeString().split(' ')[0];
+            // console.log(dateTxt);
+
+            $('.depart_time').val( dateTxt );
+          }
+        </script>
+
+        <input type="radio" onclick="setTime(5)" name="depart_time" class="radio_hidden" value="5" id="time_5" ><label for="time_5">5 minutes</label><br>
+        <input type="radio" onclick="setTime(15)" name="depart_time" class="radio_hidden" value="15" id="time_15"><label for="time_15">15 minutes</label><br>
+        <input type="radio" onclick="setTime(30)" name="depart_time" class="radio_hidden" value="30" id="time_30"><label for="time_30">30 minutes</label>
 
       </div>
     </form>
