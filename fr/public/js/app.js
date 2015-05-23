@@ -6,6 +6,7 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
   .when("/offer", {templateUrl: "/static/partials/offering.html", controller: "slugController"})
   .when("/search", {templateUrl: "/static/partials/searching.html", controller: "searchController"})
   .when("/location/:locationId", {templateUrl: "/static/partials/location.html", controller: "locationController"})
+  .when("/joined", {templateUrl: "/static/partials/joined.html"})
   .otherwise({redirectTo: '/login'});
   $locationProvider.html5Mode(true);
 }]);

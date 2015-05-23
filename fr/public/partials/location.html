@@ -12,7 +12,7 @@
   <div class="list">
     <ul>
       <li class="list-item" ng-repeat="slug in slugData">
-        <a ng-href="#" ng-click="">
+        <a ng-href="#" ng-click="joinSlug(slug._id, slug.number_of_people)">
           {{slug.number_of_people}} Seats Available
         </a>
       </li>
