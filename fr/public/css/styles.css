@@ -80,6 +80,10 @@ p, a {
   margin: 0 50px;
 }
 
+.images p {
+  margin-bottom: 20px;
+}
+
 
 #main {
   margin: 0 auto;
@@ -146,19 +150,22 @@ input {
 }
 
 .list {
-  margin-left: 400px;
-  margin-right: 400px;
+  display: block;
+  margin: 0 auto;
+  max-width: 730px;
+/*  margin-left: 400px;
+  margin-right: 400px;*/
 }
 
-/*.list-item {
+.list-item {
   padding-top: 20px;
-  padding-bottom: 20px;*/
+  padding-bottom: 20px;
 /*  border-bottom: 1px solid #000;
   border-left: 1px solid #000;
   border-right: 1px solid #000;*/
 
-  /*border: 1px solid #000;*/
-/*}*/
+  border: 1px solid #000;
+}
 
 .fb-login-button {
   margin-top: 50px;
@@ -181,16 +188,19 @@ input[type="radio"]:checked+label{
 
 input.depart_date, input.depart_time {
   font-size: 20px;
-  width: 10%;
+  width: 13%;
 }
 
 .seating h1, .depart-time h1 {
-  margin-top: 50px;
   font-size: 48px;
 }
 
 .seat-number {
   margin: 30px auto;
+}
+
+.seating, .depart-time {
+  margin-top: 100px;
 }
 
 .depart-minutes {
@@ -199,6 +209,7 @@ input.depart_date, input.depart_time {
 
 .depart-minutes label {
   font-size: 32px;
+  font-family: 'Open Sans Condensed', sans-serif;
 }
 
 /*MOBILE*/
