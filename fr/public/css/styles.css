@@ -85,6 +85,7 @@ p, a {
 
 #main {
   margin: 0 auto;
+  /*width: 730px;*/
 }
 
 .title {
@@ -144,6 +145,21 @@ input {
   text-align: center;
   margin: 10px auto;
   width: 20%;
+}
+
+.list {
+  margin-left: 400px;
+  margin-right: 400px;
+}
+
+.list-item {
+  padding-top: 20px;
+  padding-bottom: 20px;
+/*  border-bottom: 1px solid #000;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;*/
+
+  border: 1px solid #000;
 }
 
 .fb-login-button {
