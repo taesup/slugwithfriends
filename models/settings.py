@@ -18,45 +18,29 @@ CACHE_EXPIRES = 20
 
 X_DOMAINS = "*"
 
-parkings = {
-    'item_title': 'parking spaces',
-    'schema': {
-        'description': { 'type': 'string' },
-        'address': {'type': 'string'},
-        'location': { 'type': 'point', },
-        'entrance': { 'type': 'string' },
-        'phone': { 'type': 'string' },
-        'operator': { 'type': 'string' },
-        'hourly': { 'type': 'string' },
-        'daily_max': { 'type': 'string' },
-        'early_bird': { 'type': 'string' },
-        'after_hours': { 'type': 'string' },
-        'weekend_rate': { 'type': 'string' },
-        'monthly_rate': { 'type': 'string' },
-        'hours_of_operation': { 'type': 'string' },
-        'indoors_outdoors': { 'type': 'string' },
-        'service_type': { 'type': 'string' },
-        'motorcycles_allowed': {'type': 'boolean'},
-        'vehicle_types': {'type': 'string'},
-        'height_restriction': {'type': 'string'},
-        'note': {'type': 'string'}
-    }
-}
-
 users = {
     'item_title': 'users',
     'schema': {
-        'user_token': {'type': 'string'},
+        'user_token': {'type': 'string',
+                       'required': True,
+                       'unique': True
+                       },
         'reviews': {'type': 'list'},
-        'rating': {'type': 'integer'}
+        'rating': {'type': 'integer',
+                   'required': True
+                   }
     }
 }
 
 locations = {
     'item_title': 'locations',
     'schema': {
-        'from': {'type': 'string'},
-        'to': {'type': 'string'}
+        'from': {'type': 'string',
+                 'required': True
+                 },
+        'to': {'type': 'string',
+               'required': True
+               }
     }
 }
 
@@ -64,13 +48,16 @@ slugs = {
     'item_title': 'slug',
     'schema': {
         'number_of_people': {'type': 'integer'},
-        'location_id': {'type': 'string'},
-        'user_token': {'type': 'string'},
+        'location_id': {'type': 'string',
+                        'required': True
+                        },
+        'user_token': {'type': 'string',
+                       'required': True
+                       },
     }
 }
 DOMAIN = {
     'locations': locations,
-    'parkings': parkings,
     'users': users,
     'slugs': slugs,
 }
