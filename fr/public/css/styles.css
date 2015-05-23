@@ -162,7 +162,7 @@ h1.ng-binding {
 .list-item {
   padding-top: 20px;
   padding-bottom: 20px;
-  margin: 10px;
+  margin: 10px 50px;
   border: 1px solid #000;
 }
 
@@ -204,7 +204,8 @@ input.depart_date, input.depart_time {
 }
 
 .seating, .depart-time {
-  margin-top: 100px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .depart-minutes {
@@ -227,7 +228,6 @@ input.depart_date, input.depart_time {
 .join h1, .join h2 {
   font-size: 48px;
   margin-top: 20px;
-  /*margin-top: 500px;*/
 }
 
 /*MOBILE*/
@@ -240,12 +240,18 @@ input.depart_date, input.depart_time {
   nav ul li{
     display: inline;
     margin: 0 10px;
-    line-height: 150%;
+    line-height: 200%;
   }
 
   .images img {
     height: 150px;
     width: 200px;
+  }
+
+  input.depart_date, input.depart_time {
+    font-size: 20px;
+    width: 100%;
+    max-width: 250px;
   }
 }
 
