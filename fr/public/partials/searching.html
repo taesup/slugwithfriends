@@ -6,13 +6,16 @@
       <li><a href="/search">Search for Ride</a></li>
     </ul>
   </nav>
+  <script>
+    $('body').scope().getLocations();  // fetch data immediately
+                  // want to call controller function
+  </script>
+
   <div class="list">
     <ul>
-      <li class="list-item">Friend 1</li>
-      <li class="list-item">Friend 2</li>
-      <li class="list-item">Friend 3</li>
-      <li class="list-item">Friend 4</li>
-      <li class="list-item">Friend 5</li>
+      <li ng-repeat="location in locationData">
+        {{location.from}} to {{location.to}}
+      </li>
     </ul>
   </div>
 </section>
