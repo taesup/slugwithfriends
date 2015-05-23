@@ -20,8 +20,13 @@ FB.api('oauth/access_token', {
 
 
 fb.login = function(username, password) {
-  console.log(username);
-  console.log(password);
+  FB.api('/562083638/friends', function (res) {
+    if(!res || res.error) {
+     console.log(!res ? 'error occurred' : res.error);
+     return;
+    }
+    console.log(res);
+  });
 };
 
 
