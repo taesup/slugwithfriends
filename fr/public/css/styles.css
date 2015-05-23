@@ -51,13 +51,11 @@ table {
 }
 
 h1, h2, h3, h4, h5, h6, li {
-  /*font-family: 'Montserrat', sans-serif;*/
   font-family: 'Open Sans Condensed', sans-serif;
-  /*color: #FFF;*/
   color: #063940;
-  /*text-shadow: 1px 1px #000;*/
   font-size: 32px;
 }
+
 p, a {
   font-family: 'Varela Round', sans-serif;
   /*font-family: 'Open Sans Condensed', sans-serif;*/
@@ -71,7 +69,7 @@ p, a {
   /*margin-left: 600px;*/
   width: 300px;
   text-align: center;
-  margin: auto;
+  margin: 50px auto;
 }
 
 .images img {
@@ -152,20 +150,75 @@ input {
   margin-right: 400px;
 }
 
-.list-item {
+/*.list-item {
   padding-top: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 20px;*/
 /*  border-bottom: 1px solid #000;
   border-left: 1px solid #000;
   border-right: 1px solid #000;*/
 
-  border: 1px solid #000;
-}
+  /*border: 1px solid #000;*/
+/*}*/
 
 .fb-login-button {
   margin-top: 50px;
 }
 
+input.radio_hidden {
+  display: none;
+}
+
+label.label_seats {
+  font-size: 24px;
+  padding: 10px;
+  margin-top: 30px;
+}
+
+input[type="radio"]:checked+label{ 
+  background-color: black;
+  color: white;
+}
+
+.seating h1, .depart-time h1 {
+  margin-top: 50px;
+  font-size: 48px;
+}
+
+.seat-number {
+  margin: 30px auto;
+}
+
+.depart-minutes {
+  margin-top: 30px;
+}
+
+.depart-minutes label {
+  font-size: 24px;
+}
+
+/*MOBILE*/
+@media only screen and (max-width: 40em) { 
+
+  body {
+    max-width: 730px;
+  }
+
+  nav ul li{
+    display: inline;
+    margin: 0 10px;
+    line-height: 150%;
+  }
+
+  .images img {
+    height: 150px;
+    width: 200px;
+  }
+}
+
+/*TABLET*/
+@media only screen and (min-width: 40.063em) and (max-width: 64em) { 
+
+}
 @keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }
@@ -195,16 +248,3 @@ input {
     to   { opacity: 1; }
 }
 
-input.radio_hidden {
-  display: none;
-}
-
-label.label_seats {
-  font-size: 24px;
-  padding: 10px;
-}
-
-input[type="radio"]:checked+label{ 
-  background-color: black;
-  color: white;
-}

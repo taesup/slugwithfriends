@@ -2,28 +2,32 @@
   <nav>
     <ul>
       <li><a href="/home">Home</a></li>
-      <li><a href="/offer">Offer Ride</a></li>
-      <li><a href="/search">Search for Ride</a></li>
+      <li><a href="/offer">Offer A Ride</a></li>
+      <li><a href="/search">Search for A Ride</a></li>
     </ul>
   </nav>
   <div class="ride">
     <form>
       <div class="seating">
         <h1>Available Seats</h1> 
-           <input id="seats_1" class="radio_hidden" type="radio" name="seat" value="1" checked><label class="label_seats" for="seats_1">1</label><!--
-        --><input id="seats_2" class="radio_hidden" type="radio" name="seat" value="2"><label class="label_seats" for="seats_2">2</label><!--
-        --><input id="seats_3" class="radio_hidden" type="radio" name="seat" value="3"><label class="label_seats" for="seats_3">3</label><!--
-        --><input id="seats_4" class="radio_hidden" type="radio" name="seat" value="4"><label class="label_seats" for="seats_4">4</label><!--
-        --><input id="seats_5" class="radio_hidden" type="radio" name="seat" value="5"><label class="label_seats" for="seats_5">5</label>
+        <div class="seat-number">
+           <input id="seats_1" class="radio_hidden" type="radio" name="seat" value="1" checked><label class="label_seats" for="seats_1">1</label>
+           <input id="seats_2" class="radio_hidden" type="radio" name="seat" value="2"><label class="label_seats" for="seats_2">2</label>
+           <input id="seats_3" class="radio_hidden" type="radio" name="seat" value="3"><label class="label_seats" for="seats_3">3</label>
+           <input id="seats_4" class="radio_hidden" type="radio" name="seat" value="4"><label class="label_seats" for="seats_4">4</label>
+           <input id="seats_5" class="radio_hidden" type="radio" name="seat" value="5"><label class="label_seats" for="seats_5">5</label>      
+        </div>
 
 
       </div>
       <div class="depart-time">
         <h1>Departing At</h1>
         <!-- <h1>8:00 AM</h1> -->
-        <input type="radio" name="depart_time" class="radio_hidden" value="5" id="time_5" ><label for="time_5">5 minutes</label><br>
-        <input type="radio" name="depart_time" class="radio_hidden" value="15" id="time_15" checked><label for="time_15">15 minutes</label><br>
-        <input type="radio" name="depart_time" class="radio_hidden" value="30" id="time_30"><label for="time_30">30 minutes</label>
+        <div class="depart-minutes">
+          <input type="radio" name="depart_time" class="radio_hidden" value="5" id="time_5" ><label for="time_5">5 minutes</label><br>
+          <input type="radio" name="depart_time" class="radio_hidden" value="15" id="time_15" checked><label for="time_15">15 minutes</label><br>
+          <input type="radio" name="depart_time" class="radio_hidden" value="30" id="time_30"><label for="time_30">30 minutes</label>
+        </div>
 
       </div>
     </form>
