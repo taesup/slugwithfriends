@@ -18,13 +18,11 @@
   function statusChangeCallback(response) {
     if (response.status === 'connected') {
       console.log('connected');
-      console.log(response.authResponse.accessToken);
-      console.log(response.authResponse.userID);
+      // send to server
+      var controllerScope = angular.element('#main').scope();
+      controllerScope.saveLogin(response.authResponse);
     }
-    else {
-      console.log('not logged in');
-      FB.login();
-    }
+    else { FB.login(checkLoginState); }
   }
 
   function checkLoginState() {
