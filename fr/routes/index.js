@@ -26,9 +26,26 @@ module.exports = [
     path: '/api/saveLogin',
     config: {
       handler: function(request, reply) {
-        console.log(request.payload.accessToken);
-        console.log(request.payload.userId);
-        reply();
+        var accessToken = request.payload.accessToken;
+        var userId = request.payload.userId;
+        console.log(accessToken);
+        console.log(userId);
+        return fb.friends(accessToken)
+        .tap(console.log)
+        .then(reply);
+      }
+    }
+  },
+  {
+    method: 'GET',
+    path: '/api/friends',
+    config: {
+      handler: function(request, reply) {
+        var accessToken = request.query.accessToken;
+        var userId = request.query.userId;
+        return fb.friends(accessToken)
+        .tap(console.log)
+        .then(reply);
       }
     }
   },
@@ -37,7 +54,7 @@ module.exports = [
     path: '/api/slugs',
     config: {
       handler: function(request, reply) {
-        req.getAsync('http://localhost:5000/slugs')
+        return req.getAsync('http://localhost:5000/slugs')
         .then(function(users) { return processRows(users); })
         .then(reply);
       }
@@ -48,12 +65,9 @@ module.exports = [
     path: '/api/locations',
     config: {
       handler: function(request, reply) {
-        // req.getAsync('http://localhost:5000/locations')
-        // .then(function(users) { return processRows(users); })
-        // .then(reply);
-
-        var locs = fakeLocations();
-        reply(locs);
+        return req.getAsync('http://localhost:5000/locations')
+        .then(function(users) { return processRows(users); })
+        .then(reply);
       }
     }
   }
@@ -61,22 +75,8 @@ module.exports = [
 
 
 function processRows(rows) {
-  rows.shift();
-  rows = rows.map(function(row) {
-    return JSON.parse(row)._items;
-  });
-  return rows;
-}
-
-function fakeLocations() {
-  var output = [];
-  for (var i = 0; i < 25; i++) {
-    var temp = {
-      _id: 'asldfkjadlskfjasdf',
-      from: "Here",
-      to: "There"
-    };
-    output.push(temp);
-  }
-  return output;
+  var target = rows[1];
+  target = JSON.parse(target);
+  var items = target._items;
+  return items;
 }

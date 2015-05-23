@@ -12,6 +12,9 @@ Slugging with your buddy.
 pip install -r modals/requirements.txt
 
 
+##Seeding the Database ##
+python modals/seed.py
+
 ## Running MongoDB##
 python modals/run.py
 
