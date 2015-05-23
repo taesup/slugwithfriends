@@ -3,7 +3,6 @@ module.exports = fb;
 
 var FB = require('fb');
 
-
 FB.api('oauth/access_token', {
     client_id: 905205639542365,
     client_secret: 'acdb29d7fda9bc3bb96ef4f1ab679de1',
