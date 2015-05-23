@@ -48,7 +48,7 @@ locations = {
 }
 
 slugs = {
-    'item_title': 'slug',
+    'item_title': 'slugs',
     'schema': {
         'number_of_people': {'type': 'integer'},
         'location_id': {'type': 'string',
