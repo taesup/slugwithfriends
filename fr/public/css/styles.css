@@ -52,9 +52,18 @@ table {
 
 h1, h2, h3, h4, h5, h6, p, a, input {
   font-family: 'Oswald', sans-serif;
+  font-size: 24px;
+  line-height: 150%;
 } 
 
-.signup {
-  max-width: 700px;
+.sign-up {
+  margin-top: 400px;
+}
+
+input {
+  display: block;
+  text-align: center;
+  margin: 10px auto;
+  width: 20%;
 }
 
