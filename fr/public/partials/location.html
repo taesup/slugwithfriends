@@ -7,11 +7,13 @@
     </ul>
   </nav>
 
+  <h1>{{locationData.from}} to {{locationData.to}}</h1>
+
   <div class="list">
     <ul>
-      <li ng-repeat="location in locationData">
-        <a ng-href="/location/{{location._id}}">
-          {{location.from}} to {{location.to}}
+      <li ng-repeat="slug in slugData">
+        <a ng-href="#" ng-click="">
+          {{slug.number_of_people}} seats available
         </a>
       </li>
     </ul>

@@ -28,10 +28,7 @@ module.exports = [
       handler: function(request, reply) {
         var accessToken = request.payload.accessToken;
         var userId = request.payload.userId;
-        console.log(accessToken);
-        console.log(userId);
         return fb.friends(accessToken)
-        .tap(console.log)
         .then(reply);
       }
     }
@@ -44,7 +41,6 @@ module.exports = [
         var accessToken = request.query.accessToken;
         var userId = request.query.userId;
         return fb.friends(accessToken)
-        .tap(console.log)
         .then(reply);
       }
     }
@@ -61,10 +57,9 @@ module.exports = [
         url = url + locationId;
         return req.getAsync(url)
         .then(function(slugs) { return processRows(slugs); })
-        .then(function(slugs) {
-          return verifySlugs(slugs, accessToken, userId);
-        })
-        .tap(console.log)
+        // .then(function(slugs) {
+          // return verifySlugs(slugs, accessToken, userId);
+        // })
         .then(reply);
       }
     }
@@ -76,6 +71,18 @@ module.exports = [
       handler: function(request, reply) {
         return req.getAsync('http://localhost:5000/locations')
         .then(function(locations) { return processRows(locations); })
+        .then(reply);
+      }
+    }
+  },
+  {
+    method: 'GET',
+    path: '/api/locations/{locationId}',
+    config: {
+      handler: function(request, reply) {
+        var url = 'http://localhost:5000/locations/' + request.params.locationId;
+        return req.getAsync(url)
+        .then(processSingle)
         .then(reply);
       }
     }
@@ -94,7 +101,6 @@ module.exports = [
           body: { number_of_people: numPeople }
         };
         return req.patchAsync(options)
-        .tap(console.log)
         .then(processSingle)
         .then(reply);
       }
@@ -114,7 +120,6 @@ function processRows(rows) {
 }
 
 function verifySlugs(slugs, accessToken, userId) {
-  console.log(slugs);
   var output = [];
   Promise.each(slugs, function(slug) {
     var userToken = slug.user_token;
