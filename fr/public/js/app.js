@@ -1,9 +1,5 @@
-angular.module('SlugApp', [
-  'SlugApp.services',
-  'SlugApp.controllers',
-  'ngRoute'
-])
-.config(['$routeProvider', function($routeProvider) {
+var app = angular.module('SlugApp', ['ngRoute' ]);
+app.config(['$routeProvider', function($routeProvider) {
   $routeProvider
   .when("/login", {templateUrl: "/static/partials/login.html", controller: "slugController"})
   .when("/home", {templateUrl: "/static/partials/mainmenu.html", controller: "slugController"})
