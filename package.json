@@ -17,9 +17,11 @@
   "author": "taesup",
   "license": "ISC",
   "dependencies": {
+    "bluebird": "^2.9.25",
     "good": "^6.1.3",
     "good-console": "^5.0.0",
-    "hapi": "^8.5.1"
+    "hapi": "^8.5.1",
+    "request": "^2.55.0"
   },
   "devDependencies": {
     "angular": "^1.3.15",
