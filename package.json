@@ -4,6 +4,7 @@
   "description": "Slugging with your buddies",
   "main": "index.js",
   "scripts": {
+    "start": "node fr/server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
