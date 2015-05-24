@@ -180,6 +180,16 @@ input.depart_date, input.depart_time {
   max-width: 250px;
 }
 
+.submit-button {
+  background-color: #6792AB;
+  color: #FFF;
+  border: none; 
+  font-size: 24px;
+  width: 100%;
+  max-width: 250px;
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
 .seating h1, .depart-time h1 {
   font-size: 48px;
 }
