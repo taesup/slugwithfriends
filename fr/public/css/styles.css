@@ -159,22 +159,7 @@ h1.ng-binding {
   margin-top: 50px;
 }
 
-input.radio_hidden {
-  display: none;
-}
-
-label.label_seats {
-  font-size: 24px;
-  padding: 10px;
-  margin-top: 30px;
-}
-
-input[type="radio"]:checked+label{ 
-  background-color: black;
-  color: white;
-}
-
-input.depart_date, input.depart_time {
+input.depart_time {
   font-size: 20px;
   width: 100%;
   max-width: 250px;
@@ -194,26 +179,21 @@ input.depart_date, input.depart_time {
   font-size: 48px;
 }
 
-.seat-number {
-  margin: 30px auto;
-}
-
 .seating, .depart-time {
   margin-top: 50px;
   margin-bottom: 50px;
 }
 
-.depart-minutes {
-  margin-top: 30px;
-}
-
-.depart-minutes label {
-  font-size: 32px;
+.depart-time label , .depart-time input, .seating input{
   font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 20px;
 }
 
-.five-minutes, .ten-minutes, .fifteen-minutes {
-  margin-top: 20px;
+.dayofweek, .routes {
+  width: 100%;
+  max-width: 250px;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 24px;
 }
 
 .join {

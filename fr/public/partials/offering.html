@@ -17,7 +17,7 @@
       <div class="depart-time">
         <h1>Departing On</h1><br>
 
-        <select ng-model="dayofweek" convert-to-number>
+        <select ng-model="dayofweek" convert-to-number class="dayofweek">
           <option value="1">Monday</option>
           <option value="2">Tuesday</option>
           <option value="3">Wednesday</option>
@@ -36,7 +36,7 @@
 
         <br><br><h1>Route:</h1><br>
 
-        <select ng-model="chosenRoute" ng-options="route.name for route in routes">
+        <select ng-model="chosenRoute" ng-options="route.name for route in routes" class="routes">
         </select>
 
 
