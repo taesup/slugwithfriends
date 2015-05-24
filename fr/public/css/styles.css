@@ -225,6 +225,11 @@ input.depart_date, input.depart_time {
   margin-top: 20px;
 }
 
+.join img {
+  height: 200px;
+  width: 200px;
+}
+
 /*MOBILE*/
 @media only screen and (max-width: 40em) { 
 
