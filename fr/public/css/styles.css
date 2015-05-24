@@ -217,7 +217,7 @@ input.depart_date, input.depart_time {
 }
 
 .join {
-  margin-top: 225px;
+  margin: 100px auto;
 }
 
 .join h1, .join h2 {
@@ -227,10 +227,6 @@ input.depart_date, input.depart_time {
 
 /*MOBILE*/
 @media only screen and (max-width: 40em) { 
-
-/*  body {
-    max-width: 730px;
-  }*/
 
   nav ul li{
     display: inline;
