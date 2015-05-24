@@ -51,6 +51,9 @@ slugs = {
     'item_title': 'slugs',
     'schema': {
         'number_of_people': {'type': 'integer'},
+        'departure_day': { 'type': 'integer'},
+        'departure_hour': {'type': 'integer'},
+        'departure_minute': {'type': 'integer'},
         'location_id': {'type': 'string',
                         'required': True
                         },

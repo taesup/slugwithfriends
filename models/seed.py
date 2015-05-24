@@ -5,6 +5,7 @@ from lxml import html
 from pprint import pprint
 import string
 import itertools
+from datetime import datetime
 
 ENTRY_POINT = 'http://localhost:5000'
 
@@ -74,7 +75,12 @@ def seed_slugs():
         data['number_of_people'] = random.randrange(100)
         data['location_id']  = location['_id']
         data['user_token'] = user['user_token']
+        date_time = datetime(2015, random.randrange(5, 7), random.randrange(1, 6), random.randrange(1,23), random.randrange(1,59), random.randrange(1,60))
+        data['departure_day'] = date_time.day
+        data['departure_minute'] = date_time.minute
+        data['departure_hour'] = date_time.hour
         r = perform_post('slugs', json.dumps(data))
+        print r.__dict__
         print('slugs seeded', r.status_code)
 
 
@@ -90,6 +96,7 @@ def perform_post(resource, data):
 if __name__ == '__main__':
     requests.delete(endpoint('users'))
     requests.delete(endpoint('locations'))
+    requests.delete(endpoint('slugs'))
     seed_users()
     seed_locations()
     seed_slugs()
