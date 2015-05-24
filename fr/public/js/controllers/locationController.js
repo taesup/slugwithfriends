@@ -16,11 +16,25 @@ app.controller('locationController',
     });
   };
 
+
+  var intToDay = {
+    1: 'Monday',
+    2: 'Tuesday',
+    3: 'Wednesday',
+    4: 'Thursday',
+    5: 'Friday',
+    6: 'Saturday',
+    7: 'Sunday'
+  };
   $scope.getSlugs = function(response) {
     var url = '/api/slugs?accessToken=' + $scope.accessToken + '&' +
       'userId=' + $scope.userId + '&location=' + $scope.locationId;
     return $http.get(url)
     .success(function(data) {
+      data = data.map(function(datum) {
+        datum.day_string = intToDay[datum.departure_day];
+        return datum;
+      });
       $scope.slugData = data;
     });
   };

@@ -75,7 +75,7 @@ def seed_slugs():
         data['number_of_people'] = random.randrange(100)
         data['location_id']  = location['_id']
         data['user_token'] = user['user_token']
-        date_time = datetime(2015, random.randrange(5, 7), random.randrange(1, 6), random.randrange(1,23), random.randrange(1,59), random.randrange(1,60))
+        date_time = datetime(2015, random.randrange(5, 7), random.randrange(1, 7), random.randrange(1,23), random.randrange(1,59), random.randrange(1,60))
         data['departure_day'] = date_time.day
         data['departure_minute'] = date_time.minute
         data['departure_hour'] = date_time.hour

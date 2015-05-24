@@ -11,9 +11,9 @@
 
   <div class="list">
     <ul>
-      <li class="list-item" ng-repeat="slug in slugData">
+      <li class="list-item" ng-repeat="slug in slugData | orderBy:['departure_day', 'departure_hour', 'departure_minute']">
         <a ng-href="#" ng-click="joinSlug(slug._id, slug.number_of_people)">
-          {{slug.number_of_people}} Seats Available
+          {{slug.number_of_people}} Seats Available on {{slug.day_string}}, {{slug.departure_hour}}:{{slug.departure_minute}}
         </a>
       </li>
     </ul>
