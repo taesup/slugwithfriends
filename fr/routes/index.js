@@ -105,6 +105,24 @@ module.exports = [
         .then(reply);
       }
     }
+  },
+  {
+    method: 'POST',
+    path: '/api/trail',
+    config: {
+      handler: function(request, reply) {
+        var options = {
+          url: 'http://localhost:5000/slugs',
+          method: 'POST',
+          json: true,
+          body: request.payload
+        };
+        return req.postAsync(options)
+        .tap(console.log)
+        .then(processSingle)
+        .then(reply);
+      }
+    }
   }
 ];
 

@@ -10,59 +10,38 @@
     <form>
       <div class="seating">
         <h1>Available Seats</h1>
-        <div class="seat-number">
-           <input id="seats_1" class="radio_hidden" type="radio" name="seat" value="1" checked><label class="label_seats" for="seats_1">1</label>
-           <input id="seats_2" class="radio_hidden" type="radio" name="seat" value="2"><label class="label_seats" for="seats_2">2</label>
-           <input id="seats_3" class="radio_hidden" type="radio" name="seat" value="3"><label class="label_seats" for="seats_3">3</label>
-           <input id="seats_4" class="radio_hidden" type="radio" name="seat" value="4"><label class="label_seats" for="seats_4">4</label>
-           <input id="seats_5" class="radio_hidden" type="radio" name="seat" value="5"><label class="label_seats" for="seats_5">5</label>
-        </div>
+        <input type="number" class="depart_time" ng-model="seats" min="1" max="18">
 
 
       </div>
       <div class="depart-time">
-        <h1>Departing On</h1>
-          <input type="date" class="depart_date">
-        <h1>at</h1>
+        <h1>Departing On</h1><br>
 
-          <input type="time" class="depart_time">
+        <select ng-model="dayofweek" convert-to-number>
+          <option value="1">Monday</option>
+          <option value="2">Tuesday</option>
+          <option value="3">Wednesday</option>
+          <option value="4">Thrusday</option>
+          <option value="5">Friday</option>
+          <option value="6">Saturday</option>
+          <option value="7">Sunday</option>
+        </select>
 
-        <script>
-          Date.prototype.toDateInputValue = (function() {
-            var local = new Date(this);
-            local.setMinutes(this.getMinutes() - this.getTimezoneOffset());
-            return local.toJSON().slice(0,10);
-          });
+        <h1>at</h1><br>
 
-          // $(document).ready( function() {
-              $('.depart_date').val(new Date().toDateInputValue());
-              $('.depart_time').val( (new Date()).toTimeString().split(' ')[0] );
-          // });​
+        <label>Hour</label>
+        <input type="number" class="depart_time" ng-model="hour" min="1" max="23">
+        <label>Minute</label>
+        <input type="number" class="depart_time" ng-model="minute" min="0" max="59">
 
-          function setTime(val) {
-            // console.log(val);
-            var dateSum = new Date();
-            dateSum = dateSum.setTime(dateSum.getTime() + 1000 * 60 * val);
-            var dateTxt = (new Date(dateSum)).toTimeString().split(' ')[0];
-            // console.log(dateTxt);
+        <br><br><h1>Route:</h1><br>
 
-            $('.depart_time').val( dateTxt );
-          }
-        </script>
+        <select ng-model="chosenRoute" ng-options="route.name for route in routes">
+        </select>
 
-        <div class="depart-minutes">
-          <div class="five-minutes">
-            <input type="radio" onclick="setTime(5)" name="depart_time" class="radio_hidden" value="5" id="time_5" ><label for="time_5">5 minutes</label><br>
-          </div>
-          <div class="ten-minutes">
-            <input type="radio" onclick="setTime(15)" name="depart_time" class="radio_hidden" value="15" id="time_15"><label for="time_15">15 minutes</label><br>
-          </div>
-          <div class="fifteen-minutes">
-            <input type="radio" onclick="setTime(30)" name="depart_time" class="radio_hidden" value="30" id="time_30"><label for="time_30">30 minutes</label>
-          </div>
-        </div>
+
       </div>
-      <input class="submit-button" type="submit" value="Submit">
+      <input class="submit-button" type="button" value="Submit" ng-click="submit()">
     </form>
   </div>
 </section>
