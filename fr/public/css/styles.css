@@ -57,7 +57,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p, a, li {
-  /*font-family: 'Varela Round', sans-serif;*/
   font-family: 'Open Sans Condensed', sans-serif;
   font-size: 26px;
   line-height: 150%;
@@ -66,14 +65,12 @@ p, a, li {
 
 .images {
   display: block;
-  /*margin-left: 600px;*/
   width: 300px;
   text-align: center;
   margin: 50px auto;
 }
 
 .images img {
-  /*background-color: red;*/
   height: 250px;
   width: 200px;
   float: left;
@@ -87,7 +84,6 @@ p, a, li {
 
 #main {
   margin: 0 auto;
-  /*width: 730px;*/
 }
 
 .title {
@@ -192,7 +188,8 @@ input[type="radio"]:checked+label{
 
 input.depart_date, input.depart_time {
   font-size: 20px;
-  width: 13%;
+  width: 100%;
+  max-width: 250px;
 }
 
 .seating h1, .depart-time h1 {
@@ -250,15 +247,9 @@ input.depart_date, input.depart_time {
 
   input.depart_date, input.depart_time {
     font-size: 20px;
-    width: 100%;
-    max-width: 250px;
   }
 }
 
-/*TABLET*/
-@media only screen and (min-width: 40.063em) and (max-width: 64em) { 
-
-}
 @keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }
